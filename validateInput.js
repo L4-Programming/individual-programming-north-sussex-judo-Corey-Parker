@@ -19,13 +19,18 @@ function errorAppender(location, reason){
 
 }
 
-//Presence & bound Checks
+//Basic Validation Checks
 let maxStringLength= 50 
+let maxCoaching= 5
 if(inObj.name === "" || inObj.name.length > maxStringLength){errorAppender("nameInput", "Enter a valid name.")};
 if(isNaN(inObj.weight) || inObj.weight < 1 || inObj.weight > Object.values(catObj)[0]){ errorAppender("weightInput", "Enter valid weight.")}
-if(inObj.plan === "" || !(Object.values(plansObj).includes(inObj.plan))){errorAppender("planInput","Enter a valid plan")}
-//Member of set Checks
-
+console.log(inObj.plan)
+if(!(inObj.plan in plansObj) || inObj.plan === ""){errorAppender("planInput","Enter a valid plan")}
+if(!(inObj.cat in catObj) || inObj.cat === ""){errorAppender("catInput","Enter a valid category")}
+console.log(errorObject)
+//NOTE: COACHING AND COMPETITION ARE OPTIONAL, Accepts non inteiger values
+if(isNaN(inObj.coaching) || inObj.coaching < 0){errorAppender("coachingInput","Enter a valid number of hours")}
+if(inObj.coaching > maxCoaching){errorAppender(`coachingInput","You can only have up to ${maxCoaching} hours of coaching`)}
 //Context Checks
 
 
