@@ -1,4 +1,4 @@
-export function validateInput(inputObject, categoryObject){
+export function validateInput(inputsObject, categoryObject, plansObject){
 
 /* 
       let inputsObject = {
@@ -18,6 +18,15 @@ function errorAppender(location, reason){
     errorObject[location].errormessage.push(reason);
 
 }
+
+//Presence & bound Checks
+maxStringLength= 50 
+if(inputsObject.name.length = "" || inputsObject.name.length > maxStringLength){errorAppender("nameInput", "Enter a valid name.")};
+if(isNaN(inputsObject.weight) || inputsObject.weight < 1 || inputsObject.weight > Object.values(categoryObject)[0]){ errorAppender("weightInput", "Enter valid weight.")}
+
+//Member of set Checks
+
+//Context Checks
 
 
 
