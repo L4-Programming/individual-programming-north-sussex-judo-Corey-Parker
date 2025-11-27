@@ -56,9 +56,9 @@ form.addEventListener("submit", function (event) {
      coaching : document.getElementById("coachingInput").value,
      competition : document.getElementById("competitionInput").value 
   }
-
-if (validateInput(inputsObject, categoryObject, plansObject) != false){
-  displayResults()
+validationOut = validateInput(inputsObject, categoryObject, plansObject)
+if ( validationOut != false){
+  displayResults(validationOut, categoryObject, plansObject)
 }
 
 console.log(inputsObject)

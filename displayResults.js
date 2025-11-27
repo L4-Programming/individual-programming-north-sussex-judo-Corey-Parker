@@ -1,6 +1,6 @@
 function clearResults(){document.getElementById("output").innerHTML = ""}
 
-export function displayResults(inObj){
+export function displayResults(inObj,catObj, plansObj){
 
     /* 
       let inObj = {
