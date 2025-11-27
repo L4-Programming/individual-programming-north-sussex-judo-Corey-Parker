@@ -1,6 +1,7 @@
 import { displayErrors } from "./displayErrors.js";
+import { removeErrors } from "./displayErrors.js";
 export function validateInput(inObj, catObj, plansObj){
-
+    removeErrors()
 /* 
       let inObj = {
     name: document.querySelector("#nameInput").value,

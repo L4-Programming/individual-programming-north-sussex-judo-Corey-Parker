@@ -33,3 +33,25 @@ export function displayErrors(errorObject){
 }
 }
 }
+
+export function removeErrors() {
+  let errorInputs = document.querySelectorAll(".error-input");
+  errorInputs.forEach((input) => {
+    input.classList.remove("error-input");
+  });
+
+  //for ever element with class .error-label, .error-label is removed
+
+  let errorLabels = document.querySelectorAll(".error-label");
+  errorLabels.forEach((label) => {
+    label.classList.remove("error-label");
+  });
+
+  //for ever element with class .error-message, .error-message is removed
+
+  let errorMessages = document.querySelectorAll(".error-message");
+  errorMessages.forEach((div) => {
+    div.classList.remove("error-message");
+    div.innerHTML = "";
+  });
+}
