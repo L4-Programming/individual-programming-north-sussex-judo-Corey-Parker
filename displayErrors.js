@@ -12,14 +12,15 @@ export function displayErrors(errorObject){
   
     // Populate the error message div with an unordered list of error messages
 
-    let errorDiv = document.querySelector(`#${where}error`);
+    let errorDiv = document.querySelector(`#${where}Error`);
+    console.log(errorDiv)
     if (errorDiv) {
       errorDiv.classList.add("error-message");
       //adds list
       let ul = document.createElement("ul");
 
       // for each error in field of object creates and appends list element
-      errorObject[where].reasons.forEach((why) => {
+      errorObject[where].errormessage.forEach((why) => {
         let li = document.createElement("li");
         li.textContent = why;
         ul.appendChild(li);
