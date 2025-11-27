@@ -1,5 +1,4 @@
-
-
+import { validateInput } from "./validateInput.js";
 
 let form = document.querySelector("form");
 form.addEventListener("submit", function (event) {
@@ -11,6 +10,6 @@ form.addEventListener("submit", function (event) {
     coaching: document.querySelector("#coachingInput").value,
     competition: document.querySelector("#competitionInput").value
   }
-
+validateInput(inputsObject)
 console.log(inputsObject)
 })
