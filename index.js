@@ -13,10 +13,10 @@ let categoryObject = {
 }
 
 let plansObject = {
-  Beginner : 1,
-  Intermediate : 2,
-  Elite : 3,
-  SuperElite: 77
+  Beginner : [1, 20],
+  Intermediate : [3, 40],
+  Elite : [5, 60],
+  SuperElite: [6, 100]
 }
 
 
@@ -33,7 +33,7 @@ let plansSelect = document.querySelector("#planInput");
 
 
 Object.keys(plansObject).forEach(key => {
-  plansSelect.options[plansSelect.options.length] = new Option(`${key.replace(/([a-z])([A-Z])/g, '$1 $2')}: £${plansObject[key]}`, key);
+  plansSelect.options[plansSelect.options.length] = new Option(`${key.replace(/([a-z])([A-Z])/g, '$1 $2')}: £${plansObject[key][1]} (${plansObject[key][0]} per week)`, key);
 })
 
 
