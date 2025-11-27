@@ -1,5 +1,5 @@
 import { validateInput } from "./validateInput.js";
-
+import {displayResults} from "./displayResults.js";
 let form = document.querySelector("form");
 
 // assume object is populated largest to smallest
@@ -57,7 +57,9 @@ form.addEventListener("submit", function (event) {
      competition : document.getElementById("competitionInput").value 
   }
 
-validateInput(inputsObject, categoryObject, plansObject)
+if (validateInput(inputsObject, categoryObject, plansObject) != false){
+  displayResults()
+}
 
 console.log(inputsObject)
 console.log(inputsObject.name.value)

@@ -41,10 +41,10 @@ else if(inObj.competition > maxComps){errorAppender("competitionInput",`There ar
     //assumes a is gramatically correct
     else if(!(competitionPlans.includes(inObj.plan)) && inObj.competition != ""){errorAppender("competitionInput",`As a ${inObj.plan} you cannot compete in competitions`)}
 
-  if (Object.keys(errorObject).length > 0) {
+if (Object.keys(errorObject).length > 0) {
       console.log("There be errors here")
       displayErrors(errorObject)
     return false;
   }
-
+return inObj
 }
