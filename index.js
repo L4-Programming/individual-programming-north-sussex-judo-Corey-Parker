@@ -3,20 +3,23 @@ import { validateInput } from "./validateInput.js";
 let form = document.querySelector("form");
 
 
-categoryObject = {
-  Heavy : 750,
-	LHeavy : 100,
-	Middle : 90,
-	LMiddle : 81,
-	Light : 73,
-	LLight : 66
+let categoryObject = {
+  Heavyweight : 750,
+	LightHeavyweight : 100,
+	Middleweight : 90,
+	LightMiddleweight : 81,
+	Lightweight : 73,
+	Flyweight : 66
 }
 
-Object.keys(categoryObject).forEach(key => {
-  
- categorySelect = document.querySelector("#categoryInput");
- categorySelect.options[categorySelect.options.length] = new Option(key +""+myObj[key], key);
 
+
+let categorySelect = document.querySelector("#categoryInput");
+
+
+
+Object.keys(categoryObject).forEach(key => {
+  categorySelect.options[categorySelect.options.length] = new Option(`${key.replace(/([a-z])([A-Z])/g, '$1 $2')}: <${categoryObject[key]}kg`, key);
 })
 
 
@@ -30,6 +33,8 @@ form.addEventListener("submit", function (event) {
     coaching: document.querySelector("#coachingInput").value,
     competition: document.querySelector("#competitionInput").value
   }
-validateInput(inputsObject)
+  
+validateInput(inputsObject, categoryObject)
+
 console.log(inputsObject)
 })
