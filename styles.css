@@ -11,6 +11,9 @@
   --slate-500: #64748b;
   --slate-300: #cbd5e1;
   --white: #ffffff;
+  --error-bkg: rgb(255, 241, 241);
+  --error-placeholder: rgb(255, 157, 157);
+  --error-dark: rgb(199, 9, 9);
 }
 
 /*
@@ -231,4 +234,29 @@ button:active {
 .radio-button-field input:checked + label {
   background-color: var(--sky-600);
   color: var(--sky-50);
+}
+
+/* error styles */
+.error-input {
+  background-color: var(--error-bkg);
+  color: var(--error-dark);
+  border-color: var(--error-dark);
+}
+.error-input::placeholder {
+  color: var(--error-placeholder);
+}
+.error-label {
+  color: var(--error-dark);
+}
+
+.error-message ul {
+  padding-left: 0;
+}
+.error-message ul li {
+  color: var(--error-dark);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.1px;
+  list-style: none;
+  margin-bottom: 0.5rem;
 }

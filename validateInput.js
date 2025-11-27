@@ -1,3 +1,4 @@
+import { displayErrors } from "./displayErrors.js";
 export function validateInput(inObj, catObj, plansObj){
 
 /* 
@@ -34,10 +35,15 @@ console.log(errorObject)
 if(isNaN(inObj.coaching) || inObj.coaching < 0){errorAppender("coachingInput","Enter a valid number of hours")}
 if(inObj.coaching > maxCoaching){errorAppender("coachingInput",`You can only have up to ${maxCoaching} hours of coaching`)}
 
-if(isNaN(inObj.competition) || inObj.competition < 0){errorAppender("coachingInput","Enter a valid number of competitions")}
-else if(inObj.competition > maxComps){errorAppender("coachingInput",`There are only ${maxComps} competitions a month`)}
+if(isNaN(inObj.competition) || inObj.competition < 0){errorAppender("competitionInput","Enter a valid number of competitions")}
+else if(inObj.competition > maxComps){errorAppender("competitionInput",`There are only ${maxComps} competitions a month`)}
     //assumes a is gramatically correct
-    else if(!(competitionPlans.includes(inObj.plan)) && inObj.competition != ""){errorAppender("coachingInput",`As a ${inObj.plan} you cannot compete in competitions`)}
+    else if(!(competitionPlans.includes(inObj.plan)) && inObj.competition != ""){errorAppender("competitionInput",`As a ${inObj.plan} you cannot compete in competitions`)}
 
+  if (Object.keys(errorObject).length > 0) {
+      console.log("There be errors here")
+      displayErrors(errorObject)
+    return false;
+  }
 
 }
