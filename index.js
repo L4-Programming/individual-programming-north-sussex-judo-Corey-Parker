@@ -56,7 +56,7 @@ form.addEventListener("submit", function (event) {
      coaching : document.getElementById("coachingInput").value,
      competition : document.getElementById("competitionInput").value 
   }
-validationOut = validateInput(inputsObject, categoryObject, plansObject)
+let validationOut = validateInput(inputsObject, categoryObject, plansObject)
 if ( validationOut != false){
   displayResults(validationOut, categoryObject, plansObject)
 }

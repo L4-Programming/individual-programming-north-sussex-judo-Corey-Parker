@@ -16,5 +16,5 @@ export function displayResults(inObj,catObj, plansObj){
 
 
     document.getElementById("output").innerHTML = 
-    ""
+    "Awaiting Input..."
 }
