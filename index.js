@@ -1,5 +1,16 @@
-nameInput
-planInput
-weightInput
-coachingInput
-competitionInput
+
+
+
+let form = document.querySelector("form");
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let inputsObject = {
+    name: document.querySelector("#nameInput").value,
+    plan: document.querySelector("#planInput").value,
+    weight: document.querySelector("#weightInput").value,
+    coaching: document.querySelector("#coachingInput").value,
+    competition: document.querySelector("#competitionInput").value
+  }
+
+console.log(inputsObject)
+})
