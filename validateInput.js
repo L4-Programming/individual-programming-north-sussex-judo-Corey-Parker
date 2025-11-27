@@ -20,21 +20,24 @@ function errorAppender(location, reason){
 }
 
 //Basic Validation Checks
-let maxStringLength= 50 
-let maxCoaching= 5
+let maxStringLength= 50; let maxCoaching= 5; let maxComps = 2; 
+let competitionPlans = ["Intermediate","Elite","SuperElite"]
+
+
 if(inObj.name === "" || inObj.name.length > maxStringLength){errorAppender("nameInput", "Enter a valid name.")};
 if(isNaN(inObj.weight) || inObj.weight < 1 || inObj.weight > Object.values(catObj)[0]){ errorAppender("weightInput", "Enter valid weight.")}
 console.log(inObj.plan)
 if(!(inObj.plan in plansObj) || inObj.plan === ""){errorAppender("planInput","Enter a valid plan")}
 if(!(inObj.cat in catObj) || inObj.cat === ""){errorAppender("catInput","Enter a valid category")}
 console.log(errorObject)
-//NOTE: COACHING AND COMPETITION ARE OPTIONAL, Accepts non inteiger values
+//NOTE: COACHING AND COMPETITION ARE OPTIONAL, Accepts non intiger values
 if(isNaN(inObj.coaching) || inObj.coaching < 0){errorAppender("coachingInput","Enter a valid number of hours")}
-if(inObj.coaching > maxCoaching){errorAppender(`coachingInput","You can only have up to ${maxCoaching} hours of coaching`)}
-//Context Checks
+if(inObj.coaching > maxCoaching){errorAppender("coachingInput",`You can only have up to ${maxCoaching} hours of coaching`)}
 
-
-
+if(isNaN(inObj.competition) || inObj.competition < 0){errorAppender("coachingInput","Enter a valid number of competitions")}
+else if(inObj.competition > maxComps){errorAppender("coachingInput",`There are only ${maxComps} competitions a month`)}
+    //assumes a is gramatically correct
+    else if(!(competitionPlans.includes(inObj.plan)) && inObj.competition != ""){errorAppender("coachingInput",`As a ${inObj.plan} you cannot compete in competitions`)}
 
 
 }
