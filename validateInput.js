@@ -1,7 +1,7 @@
-export function validateInput(inputsObject, categoryObject, plansObject){
+export function validateInput(inObj, catObj, plansObj){
 
 /* 
-      let inputsObject = {
+      let inObj = {
     name: document.querySelector("#nameInput").value,
     plan: document.querySelector("#planInput").value,
     weight: document.querySelector("#weightInput").value,
@@ -20,10 +20,10 @@ function errorAppender(location, reason){
 }
 
 //Presence & bound Checks
-maxStringLength= 50 
-if(inputsObject.name.length = "" || inputsObject.name.length > maxStringLength){errorAppender("nameInput", "Enter a valid name.")};
-if(isNaN(inputsObject.weight) || inputsObject.weight < 1 || inputsObject.weight > Object.values(categoryObject)[0]){ errorAppender("weightInput", "Enter valid weight.")}
-
+let maxStringLength= 50 
+if(inObj.name === "" || inObj.name.length > maxStringLength){errorAppender("nameInput", "Enter a valid name.")};
+if(isNaN(inObj.weight) || inObj.weight < 1 || inObj.weight > Object.values(catObj)[0]){ errorAppender("weightInput", "Enter valid weight.")}
+if(inObj.plan === "" || !(Object.values(plansObj).includes(inObj.plan))){errorAppender("planInput","Enter a valid plan")}
 //Member of set Checks
 
 //Context Checks

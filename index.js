@@ -40,16 +40,25 @@ Object.keys(plansObject).forEach(key => {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+
+  /*   let name= document.getElementById("nameInput").value;
+    let plan= document.getElementById("planInput").value;
+    let weight= document.querySelector("#weightInput").value;
+    let cat= document.querySelector("#categoryInput").value;
+    let coaching= document.querySelector("#coachingInput").value;
+    let competition= document.querySelector("#competitionInput").value */
+
   let inputsObject = {
-    name: document.querySelector("#nameInput").value,
-    plan: document.querySelector("#planInput").value,
-    weight: document.querySelector("#weightInput").value,
-    cat:document.querySelector("#categoryInput").value,
-    coaching: document.querySelector("#coachingInput").value,
-    competition: document.querySelector("#competitionInput").value
+     name : document.getElementById("nameInput").value,
+     plan : document.getElementById("planInput").value,
+     weight : document.getElementById("weightInput").value,
+     cat : document.getElementById("categoryInput").value,
+     coaching : document.getElementById("coachingInput").value,
+     competition : document.getElementById("competitionInput").value 
   }
 
 validateInput(inputsObject, categoryObject, plansObject)
 
 console.log(inputsObject)
+console.log(inputsObject.name.value)
 })
