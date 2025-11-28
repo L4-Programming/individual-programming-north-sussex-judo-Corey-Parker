@@ -15,6 +15,27 @@ export function displayResults(inObj,catObj, plansObj){
     console.log("displayResults")
 
 
+
     document.getElementById("output").innerHTML = 
-    "Awaiting Input..."
+
+    `
+  <dl>
+    <dd >${inObj.name}</dd>
+
+    <dd >£${inObj.plan}</dd>
+
+    <dd > ${inObj.weight} </dd>
+
+    <dd >${inObj.cat}</dd>
+
+    <dd id = coachingresult>${inObj.coaching}</dd>
+    <dd id = competitionresult>${inObj.competition}</dd>
+
+  </dl>
+`
+if (inObj.coaching === ""){document.getElementById(coachingresult).style.display = "none"}
+  else{document.getElementById(coachingresult).style.display = "block"}
+if (inObj.competition ===""){document.getElementById(competitionresult).style.display = "none"}
+  else{document.getElementById(competitionresult).style.display = "block"}
+
 }
