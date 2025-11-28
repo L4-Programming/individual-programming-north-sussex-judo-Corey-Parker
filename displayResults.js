@@ -27,6 +27,10 @@ console.log(costObject)
 
 let htmlAdd = 
     `
+          <div class="athlete-info">
+        <h2>Athlete Information</h2>
+      </div>
+      
   <dl>
     <dd >${inObj.name}</dd>
 
@@ -36,16 +40,23 @@ let htmlAdd =
 
     <dd >Current Weight: ${inObj.weight}</dd>
 `
-if(inObj.competition != ""){
-htmlAdd = htmlAdd + `
-    <dd >Competitions: ${inObj.competition}</dd>`}
-    
-if(inObj.coaching != ""){
-htmlAdd = htmlAdd + `
-    <dd >Coaching: ${inObj.coaching}</dd>`}
-
+if(inObj.competition != ""){htmlAdd = htmlAdd + `<dd >Competitions: ${inObj.competition}</dd>`}
+if(inObj.coaching != ""){htmlAdd = htmlAdd + `<dd >Coaching: ${inObj.coaching}</dd>`}
 htmlAdd = htmlAdd + `</dl> `
-
 document.getElementById("output").innerHTML = htmlAdd
+
+htmlAdd =
+ `
+  <dl>
+    <dd >Costs</dd>
+
+    <dd>Sessions:  ${costObject.session}</dd>
+
+    <dd> Coaching: ${costObject.coaching}  </dd>
+
+    <dd >Competition: ${costObject.competition}</dd>
+    
+    <dd >Total for the month: ${costObject.sum}</dd>
+`
 
 }
