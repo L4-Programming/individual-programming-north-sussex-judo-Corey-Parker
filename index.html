@@ -4,20 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>North Sussex Judo</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
     <h1>North Sussex Judo</h1>
-
+    <hr class = "hr1" style = "width : 17%"/>
+    <div style = "height:3%"></div>
     <div class="wrapper">
       <form id="form">
         <h2>Cost Calculator</h2>
-        <hr />
+        <hr class = "hr1"/>
 
-        <div class="inputs-wrapper">
+        <div class="form-field">
           <label for="athlete-name">Athlete Name</label>
-          <input type="text" id="athlete-name" name="athlete-name" required />
-
+          <input type="text" id="nameInput" name="athlete-name" required />
+          <div id="nameInputError"></div>
+<!-- 
           <div class="training-plan-wrapper" role="radiogroup">
             <label>Training Plan</label>
             <div class="radio-button-field">
@@ -46,24 +49,51 @@
               <label for="elite">Elite - 5 sessions p/wk</label>
             </div>
           </div>
-
-          <div>
-            <label for="current-weight">Current Weight (kg)</label>
-            <input type="number" id="current-weight" name="current-weight" />
+           -->
           </div>
 
-          <div>
+
+        <div class="form-field">
+          <label for="plan" >Plan: </label>
+          <select name="plan"  id="planInput">
+          </select>
+          <!-- div inside form field for error message-->
+          <div id="planInputError"></div>
+        </div>
+
+
+          <div class="form-field">
+            <label for="current-weight">Current Weight (kg)</label>
+            <input type="number" id="weightInput" name="current-weight" required/>
+            <div id="weightInputError"></div>
+          </div>
+
+
+  
+          <div class="form-field">
+          <label for="category" >Category: </label>
+          <select name="category"  id="categoryInput">
+          </select>
+          <!-- div inside form field for error message-->
+          <div id="categoryInputError"></div>
+        </div>
+        
+        <hr class = "hr1"/>
+        
+          <div class="form-field">
             <label for="competitions-entered"
               >Number of Competitions Entered this Month (Optional)</label
             >
-            <input type="number" name="competitions-entered" />
+            <input type="number" id = "competitionInput" name="competitions-entered" />
+            <div id="competitionInputError"></div>
           </div>
 
-          <div>
+          <div class="form-field">
             <label for="private-coaching-hours"
               >Number of Hours of Private Coaching (Optional)</label
             >
-            <input type="number" name="private-coaching-hours" />
+            <input type="number" id = "coachingInput" name="private-coaching-hours" />
+            <div id="coachingInputError"></div>
           </div>
 
           <div>
@@ -72,14 +102,25 @@
         </div>
       </form>
 
-      <div class="athlete-info">
-        <h2>Athlete Information</h2>
-        <hr />
 
-        <div class="outputs-wrapper">
-          <div id="output" class="output-field">Awaiting Input...</div>
-        </div>
+        <hr id = "outputhr" class = "hr1" style = "width : 96.5%; display: none"/>
+
+  <div class="outputs-wrapper" id = "outputswrapper">
+
+<div id="output" class="output-field" >  
+        <div class="athlete-info">
+        <h2>Athlete Information</h2>
+        awaiting...
       </div>
-    </div>
+</div>
+
+<div id="costs" class="output-field" >     <div class="athlete-info">
+        <h2>Costs</h2>
+        awaiting...
+      </div>
+</div>
+
+      </div>
+     <script type="module" src="./index.js"></script>
   </body>
 </html>
