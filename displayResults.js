@@ -52,11 +52,34 @@ let htmlAdd =
     <div>${inObj.weight}</div>
     </div>
 `
-if(inObj.competition != ""){htmlAdd = htmlAdd + `<p >Competitions: ${inObj.competition}</p>`}
-if(inObj.coaching != ""){htmlAdd = htmlAdd + `<p >Coaching: ${inObj.coaching}</p>`}
+
+function htmlAdder(toAdd){htmlAdd = htmlAdd + toAdd}
+
+if(inObj.weight>catObj[inObj.cat]){htmlAdder(`
+  <div class = "container"><div> ${inObj.name} need to lose ${inObj.weight-catObj[inObj.cat]}Kg to compete in ${inObj.cat} </div></div>
+  `)}
+  else if(inObj.weight<catObj[inObj.cat]){htmlAdder(`<div class = "container"> <div> ${inObj.name} can to gain ${catObj[inObj.cat]-inObj.weight}Kg and still compete in ${inObj.cat} </div></div>
+    `)}
+    else{htmlAdder(`
+      <div class = "container"><div> ${inObj.name} is are dead on weight for ${inObj.cat} </div></div>
+      `)}
+
+
+if(inObj.competition != ""){htmlAdder(`
+    <div class = "container">
+    <div>Competitions:</div>
+    <div>${inObj.competition}</div>
+    </div>
+  `)}
+
+if(inObj.coaching != ""){htmlAdder(`
+    <div class = "container">
+    <div>Coaching:</div>
+    <div>${inObj.coaching}</div>
+    </div>
+  `)}
 
 document.getElementById("output").innerHTML = htmlAdd
-
 htmlAdd =
  `
   <dl>
@@ -71,30 +94,30 @@ htmlAdd =
 
 `
 
-if(inObj.coaching != ""){htmlAdd = htmlAdd +
+if(inObj.coaching != ""){htmlAdder(
 `
     <div class = "container">
     <div>Coaching:</div>
     <div>£${costObject.coaching} </div>
     </div>
-`};
+`)};
 
-if(inObj.competition != ""){htmlAdd = htmlAdd +
+if(inObj.competition != ""){htmlAdder(
 `
     <div class = "container">
     <div>Competition:</div>
     <div>£${costObject.competition}</div>
     </div>
-`};
+`)};
 
-htmlAdd = htmlAdd +
+htmlAdd = htmlAdder(
 `
     <div class = "container">
     <div>Total for the month:</div>
     <div>£${costObject.sum}</div>
     </div>
 
-`;
+`);
 
 document.getElementById("costs").innerHTML = htmlAdd
 
