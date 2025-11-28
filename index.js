@@ -1,5 +1,6 @@
 import { validateInput } from "./validateInput.js";
 import {displayResults} from "./displayResults.js";
+
 let form = document.querySelector("form");
 
 // assume object is populated largest to smallest

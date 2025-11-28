@@ -24,29 +24,28 @@ costObject.sum = costObject.session + costObject.coaching + costObject.competiti
 
 console.log(costObject)
 
-document.getElementById("output").innerHTML = 
+
+let htmlAdd = 
     `
   <dl>
     <dd >${inObj.name}</dd>
 
     <dd >${inObj.plan}</dd>
 
-    <dd > ${inObj.weight} </dd>
+    <dd> Category: ${inObj.cat} (<${catObj[inObj.cat]}) </dd>
 
-    <dd >${inObj.cat}</dd>
-
-    <dd id = coachingresult> ${inObj.coaching}</dd>
-    <dd id = competitionresult> ${inObj.competition}</dd>
-    <script>
-    
-  if (inObj.coaching === ""){document.getElementById(coachingresult).style.display = "none"}
-    else{document.getElementById(coachingresult).style.display = "block"}
-  if (inObj.competition ===""){document.getElementById(competitionresult).style.display = "none"}
-    else{document.getElementById(competitionresult).style.display = "block"}
-    
-    </script>
-  </dl>
+    <dd >Current Weight: ${inObj.weight}</dd>
 `
+if(inObj.competition != ""){
+htmlAdd = htmlAdd + `
+    <dd >Competitions: ${inObj.competition}</dd>`}
+    
+if(inObj.coaching != ""){
+htmlAdd = htmlAdd + `
+    <dd >Coaching: ${inObj.coaching}</dd>`}
 
+htmlAdd = htmlAdd + `</dl> `
+
+document.getElementById("output").innerHTML = htmlAdd
 
 }
