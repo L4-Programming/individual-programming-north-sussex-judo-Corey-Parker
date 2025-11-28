@@ -24,6 +24,7 @@ costObject.sum = (parseFloat(costObject.session) + parseFloat(costObject.coachin
 
 console.log(costObject)
 
+document.getElementById("outputswrapper").style.display = "flex";
 
 let htmlAdd = 
     `

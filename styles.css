@@ -126,6 +126,7 @@ form {
   align-items: top;
   justify-content: center;
   /* flex: 1 0 auto */
+  display: none
 }
 
 .training-plan-wrapper {
