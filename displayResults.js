@@ -54,14 +54,14 @@ let htmlAdd =
 `
 
 function htmlAdder(toAdd){htmlAdd = htmlAdd + toAdd}
-
+let presentableCat = inObj.cat.replace(/([a-z])([A-Z])/g, '$1 $2')
 if(inObj.weight>catObj[inObj.cat]){htmlAdder(`
-  <div class = "container"><div> ${inObj.name} need to lose ${inObj.weight-catObj[inObj.cat]}Kg to compete in ${inObj.cat} </div></div>
+  <div class = "container"><div> ${inObj.name} needs to lose ${inObj.weight-catObj[inObj.cat]}Kg to compete in ${presentableCat} </div></div>
   `)}
-  else if(inObj.weight<catObj[inObj.cat]){htmlAdder(`<div class = "container"> <div> ${inObj.name} can to gain ${catObj[inObj.cat]-inObj.weight}Kg and still compete in ${inObj.cat} </div></div>
+  else if(inObj.weight<catObj[inObj.cat]){htmlAdder(`<div class = "container"> <div> ${inObj.name} can to gain ${catObj[inObj.cat]-inObj.weight}Kg and still compete in ${presentableCat} </div></div>
     `)}
     else{htmlAdder(`
-      <div class = "container"><div> ${inObj.name} is are dead on weight for ${inObj.cat} </div></div>
+      <div class = "container"><div> ${inObj.name} is dead on weight for ${presentableCat} </div></div>
       `)}
 
 
