@@ -27,7 +27,7 @@ let competitionPlans = ["Intermediate","Elite","SuperElite"]
 
 
 if(inObj.name === "" || inObj.name.length > maxStringLength){errorAppender("nameInput", "Enter a valid name.")};
-if(isNaN(inObj.weight) || inObj.weight < 1 || inObj.weight > Object.values(catObj)[0]){ errorAppender("weightInput", "Enter valid weight.")}
+if(isNaN(inObj.weight) || inObj.weight < 45 || inObj.weight > Object.values(catObj)[0] ){ errorAppender("weightInput", "Enter valid weight.")}
 console.log(inObj.plan)
 if(!(inObj.plan in plansObj) || inObj.plan === ""){errorAppender("planInput","Enter a valid plan")}
 if(!(inObj.cat in catObj) || inObj.cat === ""){errorAppender("catInput","Enter a valid category")}
@@ -38,7 +38,7 @@ if(inObj.coaching > maxCoaching){errorAppender("coachingInput",`You can only hav
 
 if(isNaN(inObj.competition) || inObj.competition < 0){errorAppender("competitionInput","Enter a valid number of competitions")}
 else if(inObj.competition > maxComps){errorAppender("competitionInput",`There are only ${maxComps} competitions a month`)}
-    //assumes a is gramatically correct
+    //assumes "a" is gramatically correct
     else if(!(competitionPlans.includes(inObj.plan)) && inObj.competition != ""){errorAppender("competitionInput",`As a ${inObj.plan} you cannot compete in competitions`)}
 
 if (Object.keys(errorObject).length > 0) {
