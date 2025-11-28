@@ -215,7 +215,17 @@ button:active {
   width: 50%;
   border-style: solid
 }
-.radio-button-field input {
+
+.container {
+  display: flex;
+}
+
+.container div{
+  margin: 10px;
+  font-size: 17px
+}
+
+/* .radio-button-field input {
   position: absolute;
   left: -9999px;
   width: 1px;
@@ -239,7 +249,7 @@ button:active {
 .radio-button-field input:checked + label {
   background-color: var(--sky-600);
   color: var(--sky-50);
-}
+} */
 
 /* error styles */
 .error-input {
