@@ -25,7 +25,7 @@ costObject.sum = (parseFloat(costObject.session) + parseFloat(costObject.coachin
 console.log(costObject)
 
 document.getElementById("outputswrapper").style.display = "flex";
-
+document.getElementById("outputhr").style.display = "flex";
 let htmlAdd = 
     `
           <div class="athlete-info">

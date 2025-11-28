@@ -1,19 +1,21 @@
 :root {
-  --amber-100: #fef3c7;
-  --amber-900: #78350f;
-  --sky-50: #f0f9ff;
-  --sky-200: rgb(186 230 253);
-  --sky-300: rgb(125 211 252);
-  --sky-500: #0ea5e9;
-  --sky-600: #0284c7;
-  --sky-900: #0c4a6e;
-  --slate-900: #0f172a;
-  --slate-500: #64748b;
-  --slate-300: #cbd5e1;
-  --white: #ffffff;
+  --pink0: #3a0917;
+  --pink1: #590d22;
+  --pink2:#800f2f;
+  --pink3:#a4133c;
+  --pink4:#c9184a;
+  --pink5:#ff4d6d;
+  --pink6:#ff758f;
+  --pink7:#ff8fa3;
+  --pink8:#ffb3c1;
+  --pink9:#ffccd5;
+  --pink10:#fde8ec;
+  --black:#000000;
+
+
   --error-bkg: rgb(255, 241, 241);
-  --error-placeholder: rgb(255, 157, 157);
-  --error-dark: rgb(199, 9, 9);
+  --error-placeholder: rgb(224, 34, 34);
+  --error-dark: rgb(212, 14, 14);
 }
 
 /*
@@ -38,6 +40,7 @@
 html,
 body {
   height: 100%;
+  background-color: var(--pink9);
 }
 
 /*
@@ -49,8 +52,8 @@ body {
   line-height: 2;
   -webkit-font-smoothing: antialiased;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--slate-900);
-  padding: 3rem;
+  color: var(--pink1);
+  padding: 0rem;
 }
 
 /*
@@ -86,6 +89,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  color: var(--pink4);
 }
 
 /* Layout ------------------- */
@@ -113,12 +117,6 @@ form {
 
 }
 
-.inputs-wrapper {
-  background-color: var(--amber-100);
-  border-radius: 8px;
-  justify-content: center;
-}
-
 .outputs-wrapper {
   padding: 16px;
   border-radius: 8px;
@@ -126,7 +124,8 @@ form {
   align-items: top;
   justify-content: center;
   /* flex: 1 0 auto */
-  display: none
+  display: none;
+  color: var(--pink3);
 }
 
 .training-plan-wrapper {
@@ -149,23 +148,30 @@ h1,
 h2 {
   text-align: center;
 }
-h1 {
-  margin-bottom: 16px;
-}
+
 h2 {
   margin-bottom: 8px;
-  color: var(--amber-900);
+  color: var(--pink4);
 }
 
-hr {
-  margin-bottom: 16px;
+
+
+.hr1 {
+    border: none;
+    height:8px;
+    border-top:2px solid var(--pink3);
+    border-bottom:2px solid var(--pink3);
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 label {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--slate-500);
+  color: var(--pink0);
   margin-bottom: 2px;
 }
 
@@ -173,9 +179,11 @@ input,
 select {
   width: 100%;
   padding: 8px 16px;
-  border: 1px solid var(--slate-500);
+  border: 1px solid var(--pink1);
   border-radius: 4px;
   margin-bottom: 16px;
+  background-color: var(--pink10);
+  color: var(--pink3)
 }
 
 select {
@@ -183,7 +191,7 @@ select {
 }
 
 button {
-  background-color: var(--sky-600);
+  background-color: var(--pink5);
   border: 0;
   color: var(--sky-50);
   padding: 8px 16px;
@@ -194,24 +202,25 @@ button {
   transition: transform 200ms, box-shadow 200ms;
 }
 button:focus {
-  background-color: var(--sky-500);
+  background-color: var(--pink5);
 }
 button:active {
-  transform: translate(4px) translate(4px);
-  background-color: var(--sky-600);
+  transform: scale(1.02, 0.97);
+  background-color: var(--pink6);
   box-shadow: var(--sky-900) 0px 0px 0px;
+
 }
 
 .information-field {
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--white);
+  background-color: var(--pink10);
 }
 .output-field {
   margin-bottom: 16px;
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--white);
+  background-color: var(--pink10);
   width: 50%;
   border-style: solid
 }
@@ -236,31 +245,6 @@ button:active {
   font-size: 17px;
   text-align: center;
 }
-/* .radio-button-field input {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.radio-button-field label {
-  display: inline-block;
-  background-color: var(--sky-200);
-  color: var(--sky-600);
-  padding: 4px 16px;
-  border-radius: 16px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-bottom: 8px;
-  transition: all 200ms;
-}
-.radio-button-field label:hover {
-  background-color: var(--sky-300);
-}
-.radio-button-field input:checked + label {
-  background-color: var(--sky-600);
-  color: var(--sky-50);
-} */
 
 /* error styles */
 .error-input {
@@ -268,9 +252,7 @@ button:active {
   color: var(--error-dark);
   border-color: var(--error-dark);
 }
-.error-input::placeholder {
-  color: var(--error-placeholder);
-}
+
 .error-label {
   color: var(--error-dark);
 }
