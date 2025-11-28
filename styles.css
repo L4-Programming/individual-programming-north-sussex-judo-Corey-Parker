@@ -46,11 +46,11 @@ body {
   5. Improve text rendering
 */
 body {
-  line-height: 1.5;
+  line-height: 2;
   -webkit-font-smoothing: antialiased;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--slate-900);
-  padding: 2rem;
+  padding: 3rem;
 }
 
 /*
@@ -94,7 +94,7 @@ form {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
-  padding: 1rem;
+  padding: rem;
 }
 
 .athlete-info {
@@ -120,7 +120,6 @@ form {
 }
 
 .outputs-wrapper {
-  background-color: var(--sky-200);
   padding: 16px;
   border-radius: 8px;
   display: flex;
@@ -217,14 +216,25 @@ button:active {
 }
 
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: stretch;
+  align-items: stretch;
+  column-gap: 20px;
+  row-gap: 20px;
 }
 
 .container div{
   margin: 10px;
-  font-size: 17px
+  font-size: 17px;
+  text-align: center;
 }
 
+.doublelinecontainer {
+  margin: 10px;
+  font-size: 17px;
+  text-align: center;
+}
 /* .radio-button-field input {
   position: absolute;
   left: -9999px;

@@ -20,7 +20,7 @@ let costObject = {
   coaching : parseFloat(coachingcost * inObj.coaching).toFixed(2),
   competition : parseFloat(competitioncost * inObj.competition).toFixed(2)
 }
-costObject.sum = parseFloat(costObject.session + costObject.coaching + costObject.competition).toFixed(2)
+costObject.sum = (parseFloat(costObject.session) + parseFloat(costObject.coaching) + parseFloat(costObject.competition)).toFixed(2)
 
 console.log(costObject)
 
@@ -58,7 +58,7 @@ let presentableCat = inObj.cat.replace(/([a-z])([A-Z])/g, '$1 $2')
 if(inObj.weight>catObj[inObj.cat]){htmlAdder(`
   <div class = "container"><div> ${inObj.name} needs to lose ${inObj.weight-catObj[inObj.cat]}Kg to compete in ${presentableCat} </div></div>
   `)}
-  else if(inObj.weight<catObj[inObj.cat]){htmlAdder(`<div class = "container"> <div> ${inObj.name} can to gain ${catObj[inObj.cat]-inObj.weight}Kg and still compete in ${presentableCat} </div></div>
+  else if(inObj.weight<catObj[inObj.cat]){htmlAdder(`<div class = "doublelinecontainer">  ${inObj.name} can to gain ${catObj[inObj.cat]-inObj.weight}Kg and still compete in ${presentableCat}</div>
     `)}
     else{htmlAdder(`
       <div class = "container"><div> ${inObj.name} is dead on weight for ${presentableCat} </div></div>
@@ -80,7 +80,8 @@ if(inObj.coaching != ""){htmlAdder(`
   `)}
 
 document.getElementById("output").innerHTML = htmlAdd
-htmlAdd =
+
+let htmlCostAdd =
  `
   <dl>
       <div class="athlete-info">
@@ -94,7 +95,8 @@ htmlAdd =
 
 `
 
-if(inObj.coaching != ""){htmlAdder(
+function htmlCostAdder(toAdd){htmlCostAdd = htmlCostAdd + toAdd}
+if(inObj.coaching != ""){htmlCostAdder(
 `
     <div class = "container">
     <div>Coaching:</div>
@@ -102,7 +104,7 @@ if(inObj.coaching != ""){htmlAdder(
     </div>
 `)};
 
-if(inObj.competition != ""){htmlAdder(
+if(inObj.competition != ""){htmlCostAdder(
 `
     <div class = "container">
     <div>Competition:</div>
@@ -110,7 +112,7 @@ if(inObj.competition != ""){htmlAdder(
     </div>
 `)};
 
-htmlAdd = htmlAdder(
+htmlAdd = htmlCostAdder(
 `
     <div class = "container">
     <div>Total for the month:</div>
@@ -119,6 +121,6 @@ htmlAdd = htmlAdder(
 
 `);
 
-document.getElementById("costs").innerHTML = htmlAdd
+document.getElementById("costs").innerHTML = htmlCostAdd
 
 }

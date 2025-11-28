@@ -63,5 +63,5 @@ if ( validationOut != false){
 }
 
 console.log(inputsObject)
-console.log(inputsObject.name.value)
+console.log(inputsObject.name)
 })
