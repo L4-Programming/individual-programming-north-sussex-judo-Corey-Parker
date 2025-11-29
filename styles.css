@@ -12,10 +12,11 @@
   --pink10:#fde8ec;
   --black:#000000;
 
+  --purple0: #500374; 
+  --purple1: #6c1aca;
+  --purple2: #a724db;
+  --purple3: #b14fb4;
 
-  --error-bkg: rgb(255, 241, 241);
-  --error-placeholder: rgb(224, 34, 34);
-  --error-dark: rgb(212, 14, 14);
 }
 
 /*
@@ -166,6 +167,7 @@ h2 {
     margin-right: auto;
     text-align: center;
 }
+.hr1:after{ content:"some text"; }
 
 label {
   font-size: 0.7rem;
@@ -248,23 +250,26 @@ button:active {
 
 /* error styles */
 .error-input {
-  background-color: var(--error-bkg);
-  color: var(--error-dark);
-  border-color: var(--error-dark);
+  background-color: var(--pink8);
+  color: var(--pink4);
+  border-color: var(--pink2);
 }
 
 .error-label {
-  color: var(--error-dark);
+  color: var(--purple2);
 }
 
 .error-message ul {
   padding-left: 0;
 }
 .error-message ul li {
-  color: var(--error-dark);
+  color: var(--pink4);
   font-weight: 800;
   font-size: 0.8rem;
   letter-spacing: 0.1px;
   list-style: none;
   margin-bottom: 0.5rem;
+}
+.error-message{
+  background-color: var(--pink8);
 }
