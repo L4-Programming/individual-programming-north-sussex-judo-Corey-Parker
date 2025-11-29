@@ -29,9 +29,9 @@ let competitionPlans = ["Intermediate","Elite","SuperElite"]
 if(inObj.name === "" || inObj.name.length > maxStringLength){errorAppender("nameInput", "Enter a valid name.")};
 //weight
 if(isNaN(inObj.weight) ){ errorAppender("weightInput", "Enter valid weight.")}
-   if( inObj.weight < minWeight ){ errorAppender(`weightInput", "Weight must be greater than ${minWeight}.`)}
+   if( inObj.weight < minWeight ){ errorAppender("weightInput", `Weight must be greater than ${minWeight}Kg.`)}
     //first item in catObj will be the maximum weight allowed for the heaviest class
-     if(inObj.weight > Object.values(catObj)[0] ){ errorAppender("weightInput", `Weight must be less than ${Object.values(catObj)[0]}`)}
+     if(inObj.weight > Object.values(catObj)[0] ){ errorAppender("weightInput", `Weight must be less than ${Object.values(catObj)[0]}Kg`)}
 //plan
 if(!(inObj.plan in plansObj) || inObj.plan === ""){errorAppender("planInput","Enter a valid plan")}
 //category
