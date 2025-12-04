@@ -2,15 +2,6 @@ import { displayErrors } from "./displayErrors.js";
 import { removeErrors } from "./displayErrors.js";
 export function validateInput(inObj, catObj, plansObj){
     removeErrors()
-/* 
-      let inObj = {
-    name: document.querySelector("#nameInput").value,
-    plan: document.querySelector("#planInput").value,
-    weight: document.querySelector("#weightInput").value,
-    cat:document.querySelector("#categoryInput").value,
-    coaching: document.querySelector("#coachingInput").value,
-    competition: document.querySelector("#competitionInput").value
-  } */
 
 let errorObject = {}
 function errorAppender(location, reason){
@@ -36,7 +27,6 @@ if(isNaN(inObj.weight) ){ errorAppender("weightInput", "Enter valid weight.")}
 if(!(inObj.plan in plansObj) || inObj.plan === ""){errorAppender("planInput","Enter a valid plan")}
 //category
 if(!(inObj.cat in catObj) || inObj.cat === ""){errorAppender("catInput","Enter a valid category")}
-console.log(errorObject)
 //NOTE: COACHING AND COMPETITION ARE OPTIONAL
 if(isNaN(inObj.coaching) || inObj.coaching < 0){errorAppender("coachingInput","Enter a valid number of hours")}
   if(inObj.coaching > maxCoaching){errorAppender("coachingInput",`You can only have up to ${maxCoaching} hours of coaching`)}
@@ -47,7 +37,6 @@ if(isNaN(inObj.competition) || inObj.competition < 0){errorAppender("competition
     else if(!(competitionPlans.includes(inObj.plan)) && inObj.competition != ""){errorAppender("competitionInput",`As a ${inObj.plan} you cannot compete in competitions`)}
 
 if (Object.keys(errorObject).length > 0) {
-      console.log("There be errors here")
       displayErrors(errorObject)
     return false;
   }

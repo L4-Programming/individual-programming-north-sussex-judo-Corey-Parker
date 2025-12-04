@@ -169,6 +169,20 @@ h2 {
 }
 .hr1:after{ content:"some text"; }
 
+
+.resultshr{
+  width : 96.5%; 
+  display: none;
+}
+
+.titlehr{
+ width : 19%
+}
+
+.smallgap{
+  height:3%
+}
+
 label {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -254,6 +268,7 @@ button:active {
   color: var(--pink4);
   border-color: var(--pink2);
 }
+
 
 .error-label {
   color: var(--purple2);

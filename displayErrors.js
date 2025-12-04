@@ -13,7 +13,6 @@ export function displayErrors(errorObject){
     // Populate the error message div with an unordered list of error messages
 
     let errorDiv = document.querySelector(`#${where}Error`);
-    console.log(errorDiv)
     if (errorDiv) {
       errorDiv.classList.add("error-message");
       //adds list

@@ -9,8 +9,8 @@
 
   <body>
     <h1>North Sussex Judo</h1>
-    <hr class = "hr1" style = "width : 17%"/>
-    <div style = "height:3%"></div>
+    <hr class = "hr1 titlehr"/>
+    <div class = "smallgap"></div>
     <div class="wrapper">
       <form id="form">
         <h2>Cost Calculator</h2>
@@ -22,7 +22,6 @@
           <div id="nameInputError"></div>
           </div>
 
-
         <div class="form-field">
           <label for="plan" >Plan: </label>
           <select name="plan"  id="planInput">
@@ -31,14 +30,11 @@
           <div id="planInputError"></div>
         </div>
 
-
           <div class="form-field">
             <label for="current-weight">Current Weight (kg)</label>
             <input type="number" id="weightInput" name="current-weight" required/>
             <div id="weightInputError"></div>
           </div>
-
-
   
           <div class="form-field">
           <label for="category" >Category: </label>
@@ -48,13 +44,13 @@
           <div id="categoryInputError"></div>
         </div>
         
-        <hr class = "hr1"/>
+        <hr class ="hr1"/>
         
           <div class="form-field">
             <label for="competitions-entered"
               >Number of Competitions Entered this Month (Optional)</label
             >
-            <input type="number" id = "competitionInput" name="competitions-entered" />
+            <input type="number" id="competitionInput" name="competitions-entered" />
             <div id="competitionInputError"></div>
           </div>
 
@@ -72,10 +68,9 @@
         </div>
       </form>
 
+        <hr id="outputhr" class="hr1 resultshr"/>
 
-        <hr id = "outputhr" class = "hr1" style = "width : 96.5%; display: none"/>
-
-  <div class="outputs-wrapper" id = "outputswrapper">
+  <div class="outputs-wrapper" id="outputswrapper">
 
 <div id="output" class="output-field" >  
         <div class="athlete-info">
