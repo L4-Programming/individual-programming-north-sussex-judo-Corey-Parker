@@ -1,26 +1,38 @@
 :root {
   --pink0: #3a0917;
   --pink1: #590d22;
-  --pink2:#800f2f;
-  --pink3:#a4133c;
-  --pink4:#c9184a;
-  --pink5:#ff4d6d;
-  --pink6:#ff758f;
-  --pink7:#ff8fa3;
-  --pink8:#ffb3c1;
-  --pink9:#ffccd5;
-  --pink10:#fde8ec;
-  --black:#000000;
+  --pink2: #800f2f;
+  --pink3: #a4133c;
+  --pink4: #c9184a;
+  --pink5: #ff4d6d;
+  --pink6: #ff758f;
+  --pink7: #ff8fa3;
+  --pink8: #ffb3c1;
+  --pink9: #ffccd5;
+  --pink10: #fde8ec;
+  --black: #000000;
 
-  --purple0: #500374; 
+  --purple0: #500374;
   --purple1: #6c1aca;
   --purple2: #a724db;
   --purple3: #b14fb4;
-
 }
 
+/* .parent {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 4 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 2 / 2 / 3 / 3; }
+.div4 { grid-area: 3 / 2 / 4 / 3; } */
+
 *:focus {
-    outline-color: var(--pink2);
+  outline-color: var(--pink2);
 }
 
 /*
@@ -115,11 +127,10 @@ form {
 
 .inputs-wrapper,
 .outputs-wrapper {
-  display: flex; 
-   flex-direction: row; 
+  display: flex;
+  flex-direction: row;
   padding: 16px 128px;
-   flex: 1 0 auto; 
-
+  flex: 1 0 auto;
 }
 
 .outputs-wrapper {
@@ -159,32 +170,31 @@ h2 {
   color: var(--pink4);
 }
 
-
-
 .hr1 {
-    border: none;
-    height:8px;
-    border-top:2px solid var(--pink3);
-    border-bottom:2px solid var(--pink3);
-    width:100%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  border: none;
+  height: 8px;
+  border-top: 2px solid var(--pink3);
+  border-bottom: 2px solid var(--pink3);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
-.hr1:after{ content:"some text"; }
+.hr1:after {
+  content: "some text";
+}
 
-
-.resultshr{
-  width : 96.5%; 
+.resultshr {
+  width: 96.5%;
   display: none;
 }
 
-.titlehr{
- width : 19%
+.titlehr {
+  width: 19%;
 }
 
-.smallgap{
-  height:3%
+.small-gap {
+  height: 3%;
 }
 
 label {
@@ -199,22 +209,22 @@ input,
 select {
   width: 100%;
   padding: 8px 16px;
-  border: 1px solid var(--pink2) ;
+  border: 1px solid var(--pink2);
   border-radius: 4px;
   margin-bottom: 16px;
   background-color: var(--pink10);
-  color: var(--pink3)
+  color: var(--pink3);
 }
 
 /* Stops autofill styling the fields to ugly colours */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px var(--pink10) inset !important;
-    -webkit-font-family: Arial, Helvetica, sans-serif;
-    -webkit-color: var(--pink3);
-    -webkit-text-fill-color: var(--pink3) !important
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--pink10) inset !important;
+  -webkit-font-family: Arial, Helvetica, sans-serif;
+  -webkit-color: var(--pink3);
+  -webkit-text-fill-color: var(--pink3) !important;
 }
 
 select {
@@ -239,7 +249,6 @@ button:active {
   transform: scale(1.02, 0.97);
   background-color: var(--pink6);
   box-shadow: var(--sky-900) 0px 0px 0px;
-
 }
 
 .information-field {
@@ -253,7 +262,7 @@ button:active {
   border-radius: 8px;
   background-color: var(--pink10);
   width: 50%;
-  border-style: solid
+  border-style: solid;
 }
 
 .container {
@@ -265,7 +274,7 @@ button:active {
   row-gap: 20px;
 }
 
-.container div{
+.container div {
   margin: 10px;
   font-size: 17px;
   text-align: center;
@@ -279,11 +288,10 @@ button:active {
 
 /* error styles */
 .error-input {
-  background-color: var(--pink8) ;
+  background-color: var(--pink8);
   color: var(--pink4);
   border-color: var(--pink2);
 }
-
 
 .error-label {
   color: var(--purple2);
@@ -300,6 +308,6 @@ button:active {
   list-style: none;
   margin-bottom: 0.5rem;
 }
-.error-message{
+.error-message {
   background-color: var(--pink8);
 }
