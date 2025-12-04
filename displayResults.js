@@ -2,13 +2,13 @@ function clearResults(){document.getElementById("output").innerHTML = ""}
 
 export function displayResults(inObj,catObj, plansObj){
 clearResults()
-let coachingcost = 10;
-let competitioncost = 22;
+let coachingCost = 10;
+let competitionCost = 22;
 
 let costObject = {
   session: parseFloat(plansObj[inObj.plan][1] * plansObj[inObj.plan][0] * 4).toFixed(2),
-  coaching: parseFloat(coachingcost * inObj.coaching).toFixed(2),
-  competition: parseFloat(competitioncost * inObj.competition).toFixed(2)
+  coaching: parseFloat(coachingCost * inObj.coaching).toFixed(2),
+  competition: parseFloat(competitionCost * inObj.competition).toFixed(2)
 }
 costObject.sum = (parseFloat(costObject.session) + parseFloat(costObject.coaching) + parseFloat(costObject.competition)).toFixed(2)
 
@@ -23,15 +23,10 @@ function basicDivAppend(string,label,value){
     <div>${value}</div>
     </div>
     `
-  return string
-}
+  return string}
 
 let htmlAdd = 
-    `
-      <div class="athlete-info">
-      <h2>Athlete Information</h2>
-      </div>
-      `
+    ` <div class="athlete-info"> <h2>Athlete Information</h2> </div> `
 
 let appendArr = [["Name",`${inObj.name}`],["Plan",`${inObj.plan}`],["Category",`${inObj.cat} (<${catObj[inObj.cat]}) `],["Current Weight",`${inObj.weight}`]];
 
@@ -51,11 +46,7 @@ if(inObj.coaching != "") htmlAdd =basicDivAppend(htmlAdd,"Coaching", `${inObj.co
 document.getElementById("output").innerHTML = htmlAdd
 
 htmlAdd = 
- `
-  <dl>
-      <div class="athlete-info">
-        <h2>Costs</h2>
-      </div>
+ `<div class="athlete-info"> <h2>Costs</h2> </div>
 `
 htmlAdd = basicDivAppend(htmlAdd, "Sessions", `£${costObject.session}`)
 if(inObj.coaching != ""){htmlAdd = basicDivAppend(htmlAdd, "Coaching", `£${costObject.coaching}`)};
