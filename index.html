@@ -8,94 +8,82 @@
   </head>
 
   <body>
-    <h1>North Sussex Judo</h1>
-    <hr class="hr1 title-hr" />
-
-    <div class="small-gap"></div>
-
-    <div class="wrapper">
-      <form id="form">
-        <h2>Cost Calculator</h2>
-        <hr class="hr1" />
-
-        <div class="form-field">
-          <label for="athlete-name">Athlete Name</label>
-          <input type="text" id="nameInput" name="athlete-name" required />
-          <div id="nameInputError"></div>
-        </div>
-
-        <div class="form-field">
-          <label for="plan">Plan: </label>
-          <select name="plan" id="planInput"></select>
-          <!-- div inside form field for error message-->
-          <div id="planInputError"></div>
-        </div>
-
-        <div class="form-field">
-          <label for="current-weight">Current Weight (kg)</label>
-          <input
-            type="number"
-            id="weightInput"
-            name="current-weight"
-            required
-          />
-          <div id="weightInputError"></div>
-        </div>
-
-        <div class="form-field">
-          <label for="category">Category: </label>
-          <select name="category" id="categoryInput"></select>
-          <!-- div inside form field for error message-->
-          <div id="categoryInputError"></div>
-        </div>
-
-        <hr class="hr1" />
-
-        <div class="form-field">
-          <label for="competitions-entered">
-            Number of Competitions Entered this Month (Optional)
-          </label>
-          <input
-            type="number"
-            id="competitionInput"
-            name="competitions-entered"
-          />
-          <div id="competitionInputError"></div>
-        </div>
-
-        <div class="form-field">
-          <label for="private-coaching-hours">
-            Number of Hours of Private Coaching (Optional)
-          </label>
-          <input
-            type="number"
-            id="coachingInput"
-            name="private-coaching-hours"
-          />
-          <div id="coachingInputError"></div>
-        </div>
-
-        <div>
-          <button type="submit" id="submit-button">Submit</button>
-        </div>
-      </form>
-
-      <hr id="outputhr" class="hr1 results-hr" />
-
-      <div class="outputs-wrapper" id="outputswrapper">
-        <div id="output" class="output-field">
-          <div class="athlete-info">
-            <h2>Athlete Information</h2>
-          </div>
-        </div>
-
-        <div id="costs" class="output-field">
-          <div class="athlete-info">
-            <h2>Costs</h2>
-          </div>
-        </div>
-      </div>
-      <script type="module" src="./index.js"></script>
+    <div class="grid-title">
+      <h1>North Sussex Judo</h1>
+      <hr class="hr1 title-hr" />
     </div>
+
+    <form id="form" class="grid-form">
+      <h2>Cost Calculator</h2>
+      <hr class="hr1" />
+
+      <div class="form-field">
+        <label for="athlete-name">Athlete Name</label>
+        <input type="text" id="nameInput" name="athlete-name" required />
+        <div id="nameInputError"></div>
+      </div>
+
+      <div class="form-field">
+        <label for="plan">Plan: </label>
+        <select name="plan" id="planInput"></select>
+        <!-- div inside form field for error message-->
+        <div id="planInputError"></div>
+      </div>
+
+      <div class="form-field">
+        <label for="current-weight">Current Weight (kg)</label>
+        <input type="number" id="weightInput" name="current-weight" required />
+        <div id="weightInputError"></div>
+      </div>
+
+      <div class="form-field">
+        <label for="category">Category: </label>
+        <select name="category" id="categoryInput"></select>
+        <!-- div inside form field for error message-->
+        <div id="categoryInputError"></div>
+      </div>
+
+      <hr class="hr1" />
+
+      <div class="form-field">
+        <label for="competitions-entered">
+          Number of Competitions Entered this Month (Optional)
+        </label>
+        <input
+          type="number"
+          id="competitionInput"
+          name="competitions-entered"
+        />
+        <div id="competitionInputError"></div>
+      </div>
+
+      <div class="form-field">
+        <label for="private-coaching-hours">
+          Number of Hours of Private Coaching (Optional)
+        </label>
+        <input type="number" id="coachingInput" name="private-coaching-hours" />
+        <div id="coachingInputError"></div>
+      </div>
+
+      <div>
+        <button type="submit" id="submit-button">Submit</button>
+      </div>
+    </form>
+
+    <hr id="outputhr" class="hr1 results-hr" />
+
+    <div id="output" class="output-field grid-info">
+      <div class="athlete-info">
+        <h2>Athlete Information</h2>
+      </div>
+    </div>
+
+    <div id="costs" class="output-field grid-costs">
+      <div class="athlete-info">
+        <h2>Costs</h2>
+      </div>
+    </div>
+
+    <script type="module" src="./index.js"></script>
   </body>
 </html>

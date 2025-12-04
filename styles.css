@@ -18,18 +18,26 @@
   --purple3: #b14fb4;
 }
 
-/* .parent {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(3, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
+body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
-.div1 { grid-area: 1 / 1 / 4 / 2; }
-.div2 { grid-area: 1 / 2 / 2 / 3; }
-.div3 { grid-area: 2 / 2 / 3 / 3; }
-.div4 { grid-area: 3 / 2 / 4 / 3; } */
+.grid-title {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.grid-form {
+  grid-area: 2 / 1 / 4 / 2;
+}
+.grid-info {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.grid-costs {
+  grid-area: 3 / 2 / 4 / 3;
+}
 
 *:focus {
   outline-color: var(--pink2);
@@ -112,10 +120,8 @@ h6 {
 /* Layout ------------------- */
 
 form {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  padding: rem;
+  display: grid;
+  padding: 1rem;
 }
 
 .athlete-info {
@@ -125,23 +131,11 @@ form {
   padding: 1rem;
 }
 
-.inputs-wrapper,
-.outputs-wrapper {
+.inputs-wrapper {
   display: flex;
   flex-direction: row;
   padding: 16px 128px;
   flex: 1 0 auto;
-}
-
-.outputs-wrapper {
-  padding: 16px;
-  border-radius: 8px;
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  /* flex: 1 0 auto */
-  display: none;
-  color: var(--pink3);
 }
 
 .training-plan-wrapper {
@@ -149,13 +143,6 @@ form {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 16px;
-}
-
-.wrapper {
-  display: flex;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 32px 32px;
 }
 
 /* Atoms ------------------- */
@@ -190,7 +177,7 @@ h2 {
 }
 
 .title-hr {
-  width: 19%;
+  width: 15%;
 }
 
 .small-gap {
@@ -261,12 +248,12 @@ button:active {
   padding: 16px;
   border-radius: 8px;
   background-color: var(--pink10);
-  width: 50%;
+  width: 100%;
   border-style: solid;
 }
 
 .container {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr;
   justify-items: stretch;
   align-items: stretch;
