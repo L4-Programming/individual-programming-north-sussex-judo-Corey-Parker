@@ -184,12 +184,12 @@ h2 {
   content: "some text";
 }
 
-.resultshr {
+.results-hr {
   width: 96.5%;
   display: none;
 }
 
-.titlehr {
+.title-hr {
   width: 19%;
 }
 
