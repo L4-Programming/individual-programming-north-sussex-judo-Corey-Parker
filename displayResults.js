@@ -46,8 +46,8 @@ if(inObj.weight>catObj[inObj.cat]){doubleLineText = `${inObj.name} needs to lose
     else{doubleLineText = `${inObj.name} is dead on weight for ${presentableCategory}`}
 htmlAdd += `<div class ="doublelinecontainer"><div> ${doubleLineText} </div></div>`
 
-if(inObj.competition != "") htmlAdd =basicDivAppend(htmlAdd,"Competitions:", `${inObj.competition}`)
-if(inObj.coaching != "") htmlAdd =basicDivAppend(htmlAdd,"Coaching:", `${inObj.coaching}`)
+if(inObj.competition != "") htmlAdd =basicDivAppend(htmlAdd,"Competitions", `${inObj.competition}`)
+if(inObj.coaching != "") htmlAdd =basicDivAppend(htmlAdd,"Coaching", `${inObj.coaching}`)
 document.getElementById("output").innerHTML = htmlAdd
 
 htmlAdd = 
