@@ -1,3 +1,48 @@
-/* Refer to the README.md for instructions on what you need to do in this project */
+import { validateInput } from "./validateInput.js";
+import {displayResults} from "./displayResults.js";
 
-alert("Hello, World!");
+let form = document.querySelector("form");
+
+// assume object is populated largest to smallest
+let categoryObject = {
+  Heavyweight: 750,
+	LightHeavyweight: 100,
+	Middleweight: 90,
+	LightMiddleweight: 81,
+	Lightweight: 73,
+	Flyweight: 66
+}
+
+let plansObject = {
+  Beginner: [1, 20],
+  Intermediate: [3, 40],
+  Elite: [5, 60],
+  SuperElite: [6, 100]
+}
+
+let categorySelect = document.querySelector("#categoryInput");
+
+Object.keys(categoryObject).forEach(key => {
+  categorySelect.options[categorySelect.options.length] = new Option(`${key.replace(/([a-z])([A-Z])/g, '$1 $2')}: <${categoryObject[key]}kg`, key);
+})
+
+let plansSelect = document.querySelector("#planInput");
+
+Object.keys(plansObject).forEach(key => {
+  plansSelect.options[plansSelect.options.length] = new Option(`${key.replace(/([a-z])([A-Z])/g, '$1 $2')}: £${plansObject[key][1]} (${plansObject[key][0]} per week)`, key);
+})
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let inputsObject = {
+     name: document.getElementById("nameInput").value,
+     plan: document.getElementById("planInput").value,
+     weight: document.getElementById("weightInput").value,
+     cat: document.getElementById("categoryInput").value,
+     coaching: document.getElementById("coachingInput").value,
+     competition: document.getElementById("competitionInput").value 
+  }
+let validationOut = validateInput(inputsObject, categoryObject, plansObject)
+if ( validationOut != false){
+  displayResults(validationOut, categoryObject, plansObject)
+}})
