@@ -20,7 +20,6 @@ export function displayResults(inObj, catObj, plansObj) {
     parseFloat(costObject.competition)
   ).toFixed(2);
 
-  document.getElementById("outputhr").style.display = "flex";
 
   function basicDivAppend(string, label, value) {
     string += `

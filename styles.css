@@ -18,49 +18,23 @@
   --purple3: #b14fb4;
 }
 
-body {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 10% repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+
+
+
+body  {
+display: grid;
+grid-template-columns: 0.5% repeat(2, 1fr) 0.5%;
+grid-template-rows: 10% repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
 }
 
-.grid-title {
-  grid-area: 1 / 1 / 2 / 3;
-}
-.grid-form {
-  grid-area: 2 / 1 / 4 / 2;
-}
-.grid-info {
-  grid-area: 2 / 2 / 3 / 3;
-}
-.grid-costs {
-  grid-area: 3 / 2 / 4 / 3;
-}
+.grid-title { grid-area: 1 / 2 / 2 / 4; }
+.grid-form { grid-area: 2 / 2 / 4 / 3; }
+.grid-info { grid-area: 2 / 3 / 3 / 4; }
+.grid-costs { grid-area: 3 / 3 / 4 / 4; } 
 
-@media screen and (max-width: 740px) {
-  body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
 
-  .grid-title {
-    grid-area: 1 / 1 / 2 / 2;
-  }
-  .grid-form {
-    grid-area: 2 / 1 / 3 / 2;
-  }
-  .grid-info {
-    grid-area: 3 / 1 / 4 / 2;
-  }
-  .grid-costs {
-    grid-area: 4 / 1 / 5 / 2;
-  }
-}
 
 *:focus {
   outline-color: var(--pink2);
@@ -107,14 +81,6 @@ body {
 /*
   6. Improve media defaults
 */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
 
 /*
   7. Remove built-in form typography styles
@@ -195,7 +161,7 @@ h2 {
 }
 
 .results-hr {
-  width: 96.5%;
+  width: 100%;
   display: none;
 }
 
@@ -251,6 +217,7 @@ button {
   box-shadow: var(--sky-900) 4px 4px 0px;
   border-radius: 8px;
   transition: transform 200ms, box-shadow 200ms;
+  margin: 0px 0px 16px 0px;
 }
 button:focus {
   background-color: var(--pink5);
@@ -275,6 +242,7 @@ button:active {
   border-style: solid;
 }
 
+
 .container {
   display: flex;
   grid-template-columns: 1fr 1fr;
@@ -285,9 +253,22 @@ button:active {
 }
 
 .container div {
-  margin: 10px;
+  margin: 1% 10%;
+  width: 30%;
   font-size: 17px;
   text-align: center;
+}
+
+.images{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+}
+.images img{
+  width:30%;
+  height:30%;
 }
 
 .doublelinecontainer {
@@ -320,4 +301,30 @@ button:active {
 }
 .error-message {
   background-color: var(--pink8);
+}
+
+
+@media screen and (max-width: 740px) {
+  body {
+    display: grid;
+    grid-template-columns: 0.5% 1fr 0.5%;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .grid-title {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .grid-form {
+    grid-area: 2 / 2 / 3 / 4;
+  }
+  .grid-info {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  .grid-costs {
+    grid-area: 4 / 2 / 5 / 3;
+  }
+
+  .results-hr{display: block}
 }
