@@ -327,4 +327,9 @@ button:active {
   }
 
   .results-hr{display: block}
+
+  .output-field {
+  margin-left: 16px;
+    width: 94%;
+  }
 }
