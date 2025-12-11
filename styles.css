@@ -174,7 +174,7 @@ select {
   width: 100%;
   padding: 8px 16px;
   border: 1px solid var(--pink2);
-  border-radius: 4px;
+  border-radius: 10px;
   margin-bottom: 16px;
   background-color: var(--pink10);
   color: var(--pink3);
@@ -219,10 +219,12 @@ button:active {
 }
 .output-field {
   padding: 1rem;
-  background-color: var(--pink10);
+  background-color: var(--pink9);
   border-color: var(--pink3);
   width: 100%;
+  background-image: url("pink8tile.svg");
   border-style: solid;
+  border-radius: 10px;
 }
 
 .container {
@@ -239,6 +241,7 @@ button:active {
   width: 30%;
   font-size: 17px;
   text-align: center;
+  color: var(--pink2);
 }
 
 .images {
@@ -257,6 +260,7 @@ button:active {
   margin: 10px;
   font-size: 17px;
   text-align: center;
+  color: var(--pink2);
 }
 
 /* error styles */
