@@ -157,7 +157,8 @@ h2 {
 }
 
 .title-hr {
-  width: 15%;
+  max-width: 40%;
+  width: 28rem;
 }
 
 label {
