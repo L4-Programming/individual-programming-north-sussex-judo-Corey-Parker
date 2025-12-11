@@ -216,6 +216,7 @@ button:active {
   background-color: var(--pink10);
 }
 .output-field {
+  padding: 1rem;
   background-color: var(--pink10);
   border-color: var(--pink3);
   width: 100%;
@@ -308,20 +309,8 @@ button:active {
     display: block;
   }
 
-  .inputs-wrapper {
-    margin: 0;
-  }
-
   body {
-    margin-left: 2%;
-    margin-right: 2%;
     width: auto;
-  }
-
-  form,
-  .output-field {
-    margin-left: 0;
-    margin-right: 0;
   }
 
   button {
