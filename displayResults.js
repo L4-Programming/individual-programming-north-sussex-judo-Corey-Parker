@@ -20,7 +20,6 @@ export function displayResults(inObj, catObj, plansObj) {
     parseFloat(costObject.competition)
   ).toFixed(2);
 
-
   function basicDivAppend(string, label, value) {
     string += `
     <div class = "container">
@@ -57,7 +56,7 @@ export function displayResults(inObj, catObj, plansObj) {
   } else {
     doubleLineText = `${inObj.name} is dead on weight for ${presentableCategory}`;
   }
-  htmlAdd += `<div class ="doublelinecontainer"><div> ${doubleLineText} </div></div>`;
+  htmlAdd += `<div class ="double-line-container"><div> ${doubleLineText} </div></div>`;
 
   if (inObj.competition != "")
     htmlAdd = basicDivAppend(htmlAdd, "Competitions", `${inObj.competition}`);
