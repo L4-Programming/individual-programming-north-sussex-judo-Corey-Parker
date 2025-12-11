@@ -25,6 +25,7 @@ body {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   background-image: url("lightpinktile.svg");
+  background-size: 600px 600px;
 }
 
 .grid-title {
