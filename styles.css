@@ -24,6 +24,7 @@ body {
   grid-template-rows: 0.25fr 1fr 1rem 1fr 0.05fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  background-image: url("lightpinktile.svg");
 }
 
 .grid-title {
